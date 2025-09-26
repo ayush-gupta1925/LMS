@@ -40,8 +40,8 @@ export const signUp = async (req, res) => {
     // ❌ Wrong: req.cookie → ✅ Correct: res.cookie
     res.cookie("token", token, {
       httpOnly: true,
-      secure: false, // set true in production with HTTPS
-      sameSite: "Strict",
+      secure: true, // set true in production with HTTPS
+      sameSite: "none",
       maxAge: 7 * 24 * 60 * 60 * 1000
     });
 
@@ -72,8 +72,8 @@ export const Login = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: false,
-      sameSite: "Strict",
+      secure: true,
+      sameSite: "none",
       maxAge: 7 * 24 * 60 * 60 * 1000
     });
     return res.status(200).json(user);
@@ -184,8 +184,8 @@ export const googleAuth = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: false,
-      sameSite: "Strict",
+      secure: true,
+      sameSite: "none",
       maxAge: 7 * 24 * 60 * 60 * 1000
     });
     return res.status(200).json(user);

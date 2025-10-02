@@ -54,3 +54,20 @@ export const getReview = async (req, res) => {
       .json({ message: `failed to get review  error ${error}` });
   }
 };
+
+
+
+export const getCourseReviews = async (req, res) => {
+  try {
+    const { courseId } = req.params;
+    const reviews = await Review.find({ course: courseId })
+      .populate("user", "name role photoUrl")
+      .populate("course", "title")
+      .sort({ reviewedAt: -1 });
+
+    return res.status(200).json(reviews);
+  } catch (error) {
+    return res.status(500).json({ message: `Failed to fetch course reviews: ${error}` });
+  }
+};
+

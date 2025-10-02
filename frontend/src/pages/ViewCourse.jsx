@@ -13,7 +13,7 @@ import { serverUrl } from "../App.jsx";
 import Card from "../component/Card.jsx";
 import { toast } from "react-toastify";
 import { setLectureData } from "../redux/lectureSlice.js";
-
+import ReviewCard from "../component/ReviewCard.jsx";
 function ViewCourse() {
   const navigate = useNavigate();
   const { courseId } = useParams();

@@ -29,6 +29,9 @@ function ViewCourse() {
   const [rating, setRating] = useState(0);
   const [fetchingCourse, setFetchingCourse] = useState(false); // separate spinner for initial fetch
 
+   const [courseReviews, setCourseReviews] = useState([]);
+
+  
   // 1) Fetch course + lectures as soon as page loads (or courseId changes)
   useEffect(() => {
     const fetchCourseWithLectures = async () => {
@@ -205,6 +208,27 @@ const avgRating = calculateAvgReview(selectedCourse?.reviews);
     }
   };
 
+
+ // fetching the review of user of thir courses
+useEffect(() => {
+  const fetchCourseReviews = async () => {
+    try {
+      const res = await axios.get(`${serverUrl}/api/review/course/${courseId}`, {
+        withCredentials: true
+      });
+      setCourseReviews(res.data);
+    } catch (error) {
+      console.error("Error fetching course reviews:", error);
+    }
+  };
+
+  if (courseId) {
+    fetchCourseReviews();
+  }
+}, [courseId]);
+
+
+  
   // UI loader for initial fetch
   if (fetchingCourse) {
     return (
@@ -418,8 +442,32 @@ const avgRating = calculateAvgReview(selectedCourse?.reviews);
           </div>
         </div>
 
+
+        {/* ✅ Course Reviews Section */}
+{courseReviews.length > 0 && (
+  <div className="mt-8 border-t pt-6">
+    <h2 className="text-2xl font-semibold mb-4">Course Reviews</h2>
+    <div className="flex flex-wrap gap-6">
+      {courseReviews.map((review, index) => (
+        <ReviewCard
+          key={index}
+          comment={review.comment}
+          rating={review.rating}
+          photoUrl={review.user?.photoUrl}
+          name={review.user?.name}
+          description={review.user?.role}
+          courseTitle={review.course?.title}
+        />
+      ))}
+    </div>
+  </div>
+)}
+
+
+
+        
         {/* for creator information  */}
-        <div className="flex items-center gap-4 pt-4 border-t">
+        <div className="flex items-center gap-4 pt-4 border-t-3 mt-6">
           {creatorData?.photoUrl ? (
             <img
               src={creatorData?.photoUrl}

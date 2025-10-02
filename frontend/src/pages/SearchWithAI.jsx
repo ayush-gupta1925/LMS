@@ -73,26 +73,35 @@ function SearchWithAI() {
       {/* search component  */}
 
       <div className="bg-white shadow-xl rounded-3xl p-6 sm:p-8 w-full max-w-2xl text-center relative ">
-        <div className="flex  justify-start  gap-[25%]">
-          <div
-            className="h-[35px] w-[45px] bg-[#aca7f5]  rounded-lg pl-[7px] pt-[5px] cursor-pointer hover:bg-[#948df7]"
-            onClick={() => navigate("/")}
-          >
-            <IoReturnUpBackOutline className="text-[black] w-[26px] h-[26px] cursor-pointer absolute" />
-          </div>
+      <div className="flex flex-wrap items-center justify-start gap-4 sm:gap-[25%] mb-6">
+  {/* Back Button */}
+  <div
+    className="h-8 w-10 sm:h-[35px] sm:w-[45px] bg-[#aca7f5] rounded-lg pl-1.5 pt-1.5 sm:pl-[7px] sm:pt-[5px] cursor-pointer hover:bg-[#948df7] relative "
+    onClick={() => navigate("/")}
+  >
+    <IoReturnUpBackOutline className="text-black w-6 h-6 sm:w-[26px] sm:h-[26px] absolute" />
+  </div>
 
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-600 mb-6 flex items-center justify-center gap-2 ">
-            {" "}
-            <img src={ai} className="w-8 h-8 sm:w-[8] sm:h-[30px] " />
-            Search with <span className="text-[#CB99C7]">AI</span>{" "}
-          </h1>
-        </div>
+  {/* Heading */}
+  <h1 className="text-lg sm:text-2xl md:text-3xl font-bold text-gray-600  flex items-center gap-2">
+    <img
+      src={ai}
+      className="w-6 h-6 sm:w-8 sm:h-8 md:w-8 md:h-8"
+      alt="AI"
+    />
+    Search with <span className="text-[#CB99C7]">AI</span>
+  </h1>
+</div>
 
         <div className="flex items-center bg-gray-700 rounded-full overflow-hidden  shadow-lg relative w-full">
           <input
             type="text"
             className="flex-grow px-4 py-3 bg-[#262631] text-white placeholder-gray-400 focus:outline-none text-sm sm:text-base"
-            placeholder="What do you want to learn? (e.g. AI,MERN, UI/UX..)"
+                 placeholder={
+    window.innerWidth < 640
+      ? "What do you want to learn?"
+      : "What do you want to learn? (e.g. AI,MERN, UI/UX..)"
+  }
             onChange={(e) => setInput(e.target.value)}
             value={input}
           />

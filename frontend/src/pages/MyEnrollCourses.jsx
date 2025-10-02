@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { IoReturnUpBackOutline } from "react-icons/io5";
+import { IoArrowBack } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 
 function MyEnrollCourses() {
@@ -10,15 +10,26 @@ function MyEnrollCourses() {
   return (
     <div className="min-h-screen w-full px-4 py-9 bg-gray-50">
       {/* Back button */}
-      <IoReturnUpBackOutline
+      {/* < IoArrowBack
         className="absolute top-[3%] md:top-[6%] left-[5%] w-[30px] h-[30px] cursor-pointer"
         onClick={() => navigate("/")}
       />
 
       {/* Page heading */}
-      <h1 className="text-3xl text-center font-bold text-gray-800 mb-6">
+      {/* <h1 className="text-3xl text-center font-bold text-gray-800 mb-6">
         My Enrolled Courses
-      </h1>
+      </h1> */}
+
+      <IoArrowBack
+  className="absolute top-[3%] md:top-[6%] left-[5%] w-[30px] h-[30px] cursor-pointer"
+  onClick={() => navigate("/")}
+/>
+
+{/* Page heading */}
+<h1 className="text-xl sm:text-2xl md:text-3xl text-center font-bold text-gray-800 mb-6">
+  My Enrolled Courses
+</h1>
+
 
       {userData?.enrolledCourses?.length === 0 ? (
         <p className="text-gray-500 text-center w-full">

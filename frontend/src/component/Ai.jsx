@@ -216,7 +216,114 @@ function Ai() {
 // };
 
 
-recognition.onresult = (e) => {
+// recognition.onresult = (e) => {
+//   const transcript = e.results[0][0].transcript.trim().toLowerCase();
+//   const role = userData?.role; // "educator" or "student" or undefined
+
+//   // Public pages
+//   if (transcript.includes("home") || transcript.includes("open home page")) {
+//     speak("Opening Home page");
+//     navigate("/");
+//   } 
+//   else if (transcript.includes("signup") || transcript.includes("sign up page")) {
+//     speak("Opening Signup page");
+//     navigate("/signup");
+//   } 
+//   else if (transcript.includes("login") || transcript.includes("log in page")) {
+//     speak("Opening Login page");
+//     navigate("/login");
+//   } 
+//   else if (transcript.includes("forgot password") || transcript.includes("reset password")) {
+//     speak("Opening Forgot Password page");
+//     navigate("/forgotpassword");
+//   } 
+
+//   // Logged-in user pages
+
+//   else if (transcript.includes("edit profile") || transcript.includes("update profile")) {
+//     if(userData){
+//       speak("Opening Edit Profile page");
+//       navigate("/editprofile");
+//     } else {
+//       speak("You need to login first");
+//     }
+//   } 
+
+//     else if (transcript.includes("profile") || transcript.includes("open profile page")) {
+//     if(userData){
+//       speak("Opening Profile page");
+//       navigate("/profile");
+//     } else {
+//       speak("You need to login first");
+//     }
+//   } 
+//   // Educator-only pages
+//   else if (transcript.includes("dashboard") || transcript.includes("educator dashboard")) {
+//     if(role === "educator"){
+//       speak("Opening Educator Dashboard");
+//       navigate("/dashboard");
+//     } else {
+//       speak("You are not an educator. This page is for educators");
+//     }
+//   } 
+
+//   else if (transcript.includes("create course") || transcript.includes("new course")) {
+//     if(role === "educator"){
+//       speak("Opening Create Course page");
+//       navigate("/createcourses");
+//     } else {
+//       speak("You are not an educator. This page is for educators");
+//     }
+//   } 
+
+
+//   // Pages accessible to all logged-in users
+//   else if (transcript.includes("all courses") || transcript.includes("open all courses")) {
+//     if(userData){
+//       speak("Opening All Courses page");
+//       navigate("/allcourses");
+//     } else {
+//       speak("You need to login first");
+//     }
+//   } 
+
+//   else if (transcript.includes("enrolled courses") || transcript.includes("my enrolled courses")) {
+//     if(userData){
+//       speak("Opening My Enrolled Courses");
+//       navigate("/mycourses");
+//     } else {
+//       speak("You need to login first");
+//     }
+//   } 
+
+
+//   else if (transcript.includes("courses") || transcript.includes("my courses")) {
+//     if(role === "educator"){
+//       speak("Opening Courses page");
+//       navigate("/courses");
+//     } else {
+//       speak("You are not an educator. This page is for educators");
+//     }
+//   } 
+
+//   else if (transcript.includes("search") || transcript.includes("search with ai")) {
+//     if(userData){
+//       speak("Opening Search with AI");
+//       navigate("/search");
+//     } else {
+//       speak("You need to login first");
+//     }
+//   } 
+
+//   else {
+//     speak("Sorry, I didn't understand. Please try again.");
+//     console.log("No match found for:", transcript);
+//   }
+// };
+
+
+
+  recognition.onresult = (e) => {
   const transcript = e.results[0][0].transcript.trim().toLowerCase();
   const role = userData?.role; // "educator" or "student" or undefined
 
@@ -258,23 +365,45 @@ recognition.onresult = (e) => {
     }
   } 
   // Educator-only pages
-  else if (transcript.includes("dashboard") || transcript.includes("educator dashboard")) {
-    if(role === "educator"){
-      speak("Opening Educator Dashboard");
-      navigate("/dashboard");
-    } else {
-      speak("You are not an educator. This page is for educators");
-    }
-  } 
+  // else if (transcript.includes("dashboard") || transcript.includes("educator dashboard")) {
+  //   if(role === "educator"){
+  //     speak("Opening Educator Dashboard");
+  //     navigate("/dashboard");
+  //   } else {
+  //     speak("You are not an educator. This page is for educators");
+  //   }
+  // } 
 
-  else if (transcript.includes("create course") || transcript.includes("new course")) {
-    if(role === "educator"){
-      speak("Opening Create Course page");
-      navigate("/createcourses");
-    } else {
-      speak("You are not an educator. This page is for educators");
-    }
-  } 
+  // else if (transcript.includes("create course") || transcript.includes("new course")) {
+  //   if(role === "educator"){
+  //     speak("Opening Create Course page");
+  //     navigate("/createcourses");
+  //   } else {
+  //     speak("You are not an educator. This page is for educators");
+  //   }
+  // } 
+
+  else if (transcript.includes("dashboard") || transcript.includes("educator dashboard")) {
+  if (!userData) {
+    speak("You need to login first");
+  } else if (role === "educator") {
+    speak("Opening Educator Dashboard");
+    navigate("/dashboard");
+  } else {
+    speak("This page is for educators");
+  }
+}
+
+else if (transcript.includes("create course") || transcript.includes("new course")) {
+  if (!userData) {
+    speak("You need to login first");
+  } else if (role === "educator") {
+    speak("Opening Create Course page");
+    navigate("/createcourses");
+  } else {
+    speak("This page is for educators");
+  }
+}
 
 
   // Pages accessible to all logged-in users
@@ -297,14 +426,25 @@ recognition.onresult = (e) => {
   } 
 
 
-  else if (transcript.includes("courses") || transcript.includes("my courses")) {
-    if(role === "educator"){
-      speak("Opening Courses page");
-      navigate("/courses");
-    } else {
-      speak("You are not an educator. This page is for educators");
-    }
-  } 
+  // else if (transcript.includes("courses") || transcript.includes("my courses")) {
+  //   if(role === "educator"){
+  //     speak("Opening Courses page");
+  //     navigate("/courses");
+  //   } else {
+  //     speak("You are not an educator. This page is for educators");
+  //   }
+  // } 
+
+else if (transcript.includes("courses") || transcript.includes("my courses")) {
+  if (!userData) {
+    speak("You need to login first");
+  } else if (role === "educator") {
+    speak("Opening Courses page");
+    navigate("/courses");
+  } else {
+    speak("This page is for educators");
+  }
+}
 
   else if (transcript.includes("search") || transcript.includes("search with ai")) {
     if(userData){

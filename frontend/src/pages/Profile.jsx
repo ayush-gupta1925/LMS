@@ -34,7 +34,7 @@ function Profile() {
           <p className="text-[15px] text-gray-500 ">{userData.role}</p>
         </div>
 
-        <div className="mt-6 space-y-4">
+        {/* <div className="mt-6 space-y-4">
           <div className="text-[17px] flex items-center justify-start gap-2">
             <span className="font-semibold text-gray-700 ">Email : </span>
             <span>{userData.email}</span>
@@ -51,8 +51,27 @@ function Profile() {
             </span>
             <span>{userData.enrolledCourses.length}</span>
           </div>
-        </div>
+        </div> */}
 
+
+<div className="mt-6 space-y-4">
+  <div className="text-sm sm:text-base md:text-[17px] flex items-center justify-start gap-2">
+    <span className="font-semibold text-gray-700">Email :</span>
+    <span>{userData.email}</span>
+  </div>
+
+  <div className="text-sm sm:text-base md:text-[17px] flex items-center justify-start gap-2">
+    <span className="font-semibold text-gray-700">Bio :</span>
+    <span>{userData.description}</span>
+  </div>
+
+  <div className="text-sm sm:text-base md:text-[17px] flex items-center justify-start gap-2">
+    <span className="font-semibold text-gray-700">Enrolled Courses :</span>
+    <span>{userData.enrolledCourses.length}</span>
+  </div>
+</div>
+
+        
         <div
           className="mt-6 flex justify-center gap-4"
           onClick={() => navigate("/editprofile")}

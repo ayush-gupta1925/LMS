@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.png";
 import { IoPersonCircleSharp } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -35,7 +35,7 @@ const Nav = () => {
         <div className="lg:w-[20%] w-[40%] lg:pl-[30px] ">
           <img
             src={logo}
-            className="w-[60px]  rounded-[5px] border-2 border-white "
+            className="w-[70px]  rounded-[5px] border-2 border-[#968383] "
           />
         </div>
         <div className="w-[30%] lg:flex items-center justify-center gap-4 hidden">

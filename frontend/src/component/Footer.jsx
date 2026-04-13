@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 function Footer() {
   const navigate = useNavigate();
@@ -7,7 +7,7 @@ function Footer() {
     <div className="bg-[#535360] text-gray-300 py-10 px-6">
       <div className="max-w-7xl  mx-auto flex lg:items-center items-start justify-center gap-[40px] lg:gap-[150px] flex-col lg:flex-row">
         <div className="lg:w-[40%] md:w-[50%] w-[100%]">
-          <img src={logo} className="h-10 mb-3 border-1 rounded-[5px]" />
+          <img src={logo} className="mb-3 border-1 rounded-[5px] w-[100px] h-[60px] border-[#484847]" />
           <h2 className="text-xl font-bold text-white mb-3">
             {" "}
             Virtual Courses

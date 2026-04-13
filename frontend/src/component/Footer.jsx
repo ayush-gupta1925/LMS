@@ -10,8 +10,12 @@ function Footer() {
           <img src={logo} className="mb-3 border-1 rounded-[5px] w-[100px] h-[60px] border-[#484847]" />
           <h2 className="text-xl font-bold text-white mb-3">
             {" "}
-            Virtual Courses
+            EduVia
           </h2>
+  <p className="text-sm">
+            Eduvia represents a digital pathway for education where students can access learning resources, courses, and knowledge easily through an online platform.
+         </p>
+          
           <p className="text-sm">
             AI-powered learning platform to help you grow smarter. Learn
             anything, anytime, anywhere.

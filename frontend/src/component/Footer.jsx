@@ -16,7 +16,7 @@ function Footer() {
             Eduvia represents a digital pathway for education where students can access learning resources, courses, and knowledge easily through an online platform.
          </p>
           
-          <p className="text-sm">
+          <p className="text-sm mt-[10px]">
             AI-powered learning platform to help you grow smarter. Learn
             anything, anytime, anywhere.
           </p>

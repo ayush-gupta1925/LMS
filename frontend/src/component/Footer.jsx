@@ -64,7 +64,7 @@ function Footer() {
       </div>
 
       <div className="border-t border-gray-700 mt-10 pt-5 text-sm text-center text-[#d8c0c0]">
-        © {new Date().getFullYear()}
+        © {new Date().getFullYear()} &nbsp;
         LearnAI. All rights reserved.
       </div>
     </div>

@@ -166,7 +166,7 @@ function Login() {
         </div>
 
         {/* right div */}
- <div className="w-[50%] h-[100%] rounded-r-2xl bg-white md:flex items-center justify-center flex-col hidden border-l-4 border-gray-300">
+ <div className="w-[50%] h-[100%] rounded-r-2xl bg-white md:flex items-center justify-center flex-col hidden border-l-3 border-blue-500 rounded-l-2xl">
   <img 
     src={logo} 
     alt="logo" 

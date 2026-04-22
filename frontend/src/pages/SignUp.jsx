@@ -199,7 +199,7 @@ function SignUp() {
   <img 
     src={logo} 
     alt="logo" 
-    className="w-80 shadow-2xl rounded-lg" 
+    className="w-90 shadow-2xl rounded-lg" 
   />
 </div>
       </form>

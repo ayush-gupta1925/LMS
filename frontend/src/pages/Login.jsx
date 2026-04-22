@@ -166,11 +166,9 @@ function Login() {
         </div>
 
         {/* right div */}
-        <div className="w-[50%] h-[100%] rounded-r-2xl bg-[black] md:flex items-center justify-center flex-col hidden">
-          <img src={logo} alt="logo" className="w-30  shadow-2xl" />
-          <span className="text-2xl  text-white cursor-pointer">
-            Virtual Clasess
-          </span>
+        <div className="w-[50%] h-[100%] rounded-r-2xl bg-[white] md:flex items-center justify-center flex-col hidden">
+          <img src={logo} alt="logo" className="w-60  shadow-2xl" />
+         
         </div>
       </form>
     </div>

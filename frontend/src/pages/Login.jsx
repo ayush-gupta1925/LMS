@@ -166,10 +166,13 @@ function Login() {
         </div>
 
         {/* right div */}
-        <div className="w-[50%] h-[100%] rounded-r-2xl bg-[white] md:flex items-center justify-center flex-col hidden">
-          <img src={logo} alt="logo" className="w-60  shadow-2xl" />
-         
-        </div>
+ <div className="w-[50%] h-[100%] rounded-r-2xl bg-white md:flex items-center justify-center flex-col hidden border-l-4 border-gray-300">
+  <img 
+    src={logo} 
+    alt="logo" 
+    className="w-80 shadow-2xl rounded-lg" 
+  />
+</div>
       </form>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logof.png";
 import google from "../assets/google.jpg";
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";

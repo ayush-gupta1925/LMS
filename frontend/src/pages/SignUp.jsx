@@ -178,8 +178,8 @@ function SignUp() {
             className="w-[80%] h-[40px] border-1 border-[black] rounded-full flex bg-[#f4f4fd] items-center justify-center cursor-pointer"
             onClick={googleSignUp}
           >
-            <img src={google} className="w-[25px] " />
-            <span className="text-gray-700  text-[20px]">oogle</span>
+            
+            <span className="text-gray-700  text-[30px]">Google</span>
           </div>
 
           <div className="text-[#6f6f6f]">
@@ -195,10 +195,13 @@ function SignUp() {
         </div>
 
         {/* right div */}
-        <div className="w-[50%] h-[100%] rounded-r-2xl bg-[black] md:flex items-center justify-center flex-col hidden">
-          <img src={logo} alt="logo" className="w-30  shadow-2xl" />
-          <span className="text-2xl  text-white">Virtual Clasess</span>
-        </div>
+        <div className="w-[50%] h-[100%] rounded-r-2xl bg-white md:flex items-center justify-center flex-col hidden border-l-3 border-blue-500 rounded-l-2xl">
+  <img 
+    src={logo} 
+    alt="logo" 
+    className="w-80 shadow-2xl rounded-lg" 
+  />
+</div>
       </form>
     </div>
   );

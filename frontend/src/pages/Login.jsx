@@ -149,8 +149,8 @@ function Login() {
             className="w-[80%] h-[40px] border-1 border-[black] rounded-full flex   bg-[#f4f4fd] items-center justify-center cursor-pointer"
             onClick={googleLogin}
           >
-            <img src={google} className="w-[25px] " />
-            <span className="text-gray-700  text-[20px]">oogle</span>
+            
+            <span className="text-red-700  text-[25px]">Google</span>
           </div>
 
           <div className="text-[#6f6f6f]">
@@ -170,7 +170,7 @@ function Login() {
   <img 
     src={logo} 
     alt="logo" 
-    className="w-80 shadow-2xl rounded-lg" 
+    className="w-90 shadow-2xl rounded-lg" 
   />
 </div>
       </form>

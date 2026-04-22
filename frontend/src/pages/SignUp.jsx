@@ -179,7 +179,7 @@ function SignUp() {
             onClick={googleSignUp}
           >
             
-            <span className="text-gray-700  text-[30px]">Google</span>
+            <span className="text-red-700  text-[30px]">Google</span>
           </div>
 
           <div className="text-[#6f6f6f]">
@@ -195,7 +195,7 @@ function SignUp() {
         </div>
 
         {/* right div */}
-        <div className="w-[50%] h-[100%] rounded-r-2xl bg-white md:flex items-center justify-center flex-col hidden border-l-3 border-blue-500 rounded-l-2xl">
+        <div className="w-[50%] h-[100%] rounded-r-2xl bg-white md:flex items-center justify-center flex-col hidden border-l-1 border-[black] rounded-l-2xl">
   <img 
     src={logo} 
     alt="logo" 

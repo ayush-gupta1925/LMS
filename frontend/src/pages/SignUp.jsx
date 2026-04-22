@@ -179,7 +179,7 @@ function SignUp() {
             onClick={googleSignUp}
           >
             
-            <span className="text-red-700  text-[30px]">Google</span>
+            <span className="text-red-700  text-[25px]">Google</span>
           </div>
 
           <div className="text-[#6f6f6f]">
